@@ -17,6 +17,7 @@ app.get('/', function (req, res){
       console.log(responseData.body); // outputs "word to your mother."
     }
   });
+  res.send('Greetings!');
 });
 
 app.post('/', function (req, res){
