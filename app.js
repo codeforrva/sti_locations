@@ -5,7 +5,9 @@ var twilio_response = require('twilio');
 var resp = new twilio_response.TwimlResponse();
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
 
+app.use(bodyParser.json());
 app.get('/', function (req, res){
   twilio.sendMessage({
     to: '+17174870605',
