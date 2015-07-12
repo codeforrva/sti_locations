@@ -4,7 +4,7 @@
   "description": "SMS based sti location finder built by Code For RVA for the Richmond Department of Health",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "author": "Code For RVA",
   "license": "ISC",
