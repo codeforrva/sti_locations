@@ -23,7 +23,7 @@ app.get('/', function (req, res){
 });
 
 app.post('/', function (req, res){
-  console.log(res);
+  console.log(req.body);
 });
 
 var server = app.listen(process.env.PORT || 3000, function () {
