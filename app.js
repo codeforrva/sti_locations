@@ -7,6 +7,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.get('/', function (req, res){
   twilio.sendMessage({
@@ -23,7 +24,7 @@ app.get('/', function (req, res){
 });
 
 app.post('/', function (req, res){
-  console.log(req);
+  console.log(req.url.query);
 });
 
 var server = app.listen(process.env.PORT || 3000, function () {
