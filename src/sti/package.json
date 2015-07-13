@@ -1,0 +1,16 @@
+{
+  "name": "sti",
+  "version": "0.0.1",
+  "description": "module for sti-sms app",
+  "main": "sti.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Code For RVA",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^1.3.0",
+    "request": "^2.58.0",
+    "twilio": "^2.2.1"
+  }
+}
