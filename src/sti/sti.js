@@ -74,7 +74,7 @@ function send(type, toPhone, data){
   var body;
   switch (type) {
     case "invalidZip":
-      body = "Sorry, " + data.zip + " is not a valid zip code. Please try again";
+      body = "Sorry, " + data.zip + " is not a valid zip code. Please try again!";
       break;
     case "noResults":
       body = "Sorry, " + data.zip + " did not return any testing locations. Please try a different zip code";
