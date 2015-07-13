@@ -2,7 +2,6 @@
   "name": "sti",
   "version": "0.0.1",
   "description": "module for sti-sms app",
-  "main": "sti.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
