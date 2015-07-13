@@ -8,6 +8,7 @@ module.exports = {
   validate_zip: function(req, res, next){
     var zip, toPhone;
     if(req.body.body){
+      console.log(req.body.body);
       zip = req.body.body.Body;
       toPhone = req.body.body.From;
     } else{
