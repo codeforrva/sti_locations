@@ -4,7 +4,7 @@ var twilio = require('twilio')(ACCOUNT_SID, AUTH_TOKEN);
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var sti = require('./src/sti');
+var sti = require('sti');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
