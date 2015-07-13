@@ -1,5 +1,6 @@
-var ACCOUNT_SID = 'ACaf0232e2832b0cbe15d9c74fc812cf7e';
+require('newrelic'); 
 var AUTH_TOKEN = '8b9c7db15691ed32283ccb89acc7ac99';
+var ACCOUNT_SID = 'ACaf0232e2832b0cbe15d9c74fc812cf7e';
 var twilio = require('twilio')(ACCOUNT_SID, AUTH_TOKEN);
 var express = require('express');
 var app = express();
