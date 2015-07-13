@@ -44,6 +44,7 @@ module.exports = {
     });
   },
   send_locations: function(req, res, next){
+    if(res.locations){
       res.locations.reduce(function(previousValue, currentValue, index, array){
         if(index < 4){
           send('location', req.toPhone, {location: currentValue});
