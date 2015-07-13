@@ -6,8 +6,8 @@ var async = require('async');
 
 module.exports = {
   validate_zip: function(req, res, next){
-    var zip, toPhone;
     console.log(req.body);
+    var zip, toPhone;
     if(req.body.body){
       // console.log(req.body.body);
       zip = req.body.body.Body;
@@ -90,8 +90,6 @@ function send(type, toPhone, data){
     body: body
   }, function(err, responseData){
     if (!err) { // "err" is an error received during the request, if any
-      console.log(responseData.from); // outputs "+14506667788"
-      console.log(responseData.body); // outputs "word to your mother."
     }
   });
 }
