@@ -6,17 +6,17 @@ var async = require('async');
 
 module.exports = {
   validate_zip: function(req, res, next){
-    console.log(req.body);
     var zip, toPhone;
-    if(req.body.body){
-      // console.log(req.body.body);
-      zip = req.body.body.Body;
-      toPhone = req.body.body.From;
+    if(req.body){
+      zip = req.body.Body;
+      toPhone = req.body.From;
     } else{
       zip = req.query.zip;
       toPhone = "+17174870605";
     }
     if(/^\d{5}(-\d{4})?$/.test(zip)){
+      req.zip = zip;
+      req.toPhone = toPhone;
       next();
     } else {
       send('invalidZip', toPhone, {zip: zip});
@@ -24,19 +24,10 @@ module.exports = {
     }
   },
   get_locations: function(req, res, next){
-    var zip, toPhone;
-    if(req.body.body){
-      zip = req.body.body.Body;
-      toPhone = req.body.body.From;
-    } else{
-      zip = req.query.zip;
-      toPhone = "+17174870605";
-    }
-
     var params = {
       url: 'https://locator.aids.gov/data',
       qs: {
-        zip: req.query.zip,
+        zip: req.zip,
         format: 'json',
         services: 'testing',
         distance: '10',
@@ -48,21 +39,14 @@ module.exports = {
         res.locations = json_data.services[0].providers;
         next();
       } else{
-        send('noResults', toPhone, {zip:zip});
+        send('noResults', req.toPhone, {zip: req.zip});
       }
     });
   },
   send_locations: function(req, res, next){
-    if(res.locations){
-      var toPhone;
-      if(req.body.body){
-        toPhone = req.body.body.From;
-      } else{
-        toPhone = "+17174870605";
-      }
       res.locations.reduce(function(previousValue, currentValue, index, array){
         if(index < 4){
-          send('location', toPhone, {location: currentValue});
+          send('location', req.toPhone, {location: currentValue});
         }
       });
     }
