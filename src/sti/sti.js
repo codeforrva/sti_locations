@@ -1,13 +1,15 @@
 var ACCOUNT_SID = 'ACaf0232e2832b0cbe15d9c74fc812cf7e';
-var AUTH_TOKEN = '8b9c7db15691ed32283ccb89acc7ac99';
-var twilio = require('twilio')(ACCOUNT_SID, AUTH_TOKEN);
-var request = require('request');
-var async = require('async');
+var AUTH_TOKEN  = '8b9c7db15691ed32283ccb89acc7ac99';
+var twilio      = require('twilio')(ACCOUNT_SID, AUTH_TOKEN);
+var async       = require('async');
+var request     = require('request');
+var fs          = require('fs');
+var geolib      = require('geolib');
 
 module.exports = {
   validate_zip: function(req, res, next){
     var zip, toPhone;
-    if(req.body){
+    if(req.body && Object.keys(req.body).length > 0){
       zip = req.body.Body;
       toPhone = req.body.From;
     } else{
@@ -24,31 +26,43 @@ module.exports = {
     }
   },
   get_locations: function(req, res, next){
+    var locations = JSON.parse(fs.readFileSync('./src/locations.json', 'utf8'));
+    var coordinates = [];
+    locations.locations.forEach(function(loc){
+      coordinates.push(loc.coordinates);
+    });
     var params = {
-      url: 'https://locator.aids.gov/data',
+      url: "http://maps.googleapis.com/maps/api/geocode/json",
       qs: {
-        zip: req.zip,
-        format: 'json',
-        services: 'testing',
-        distance: '10',
+        address: req.zip
       }
     };
     request(params, function(err, response, body){
       if (!err && response.statusCode == 200) {
-        var json_data = JSON.parse(body);
-        res.locations = json_data.services[0].providers;
-        next();
+        var zip_query = JSON.parse(body);
+        if(zip_query.status == "OK"){
+          var result = zip_query.results[0];
+          var zip_lat = result.geometry.location.lat;
+          var zip_lng = result.geometry.location.lng;
+          var closest = geolib.orderByDistance({latitude: zip_lat, longitude: zip_lng}, coordinates);
+          var final_locations = [];
+          for (var i = 0; i < 3; i++) {
+            var location = locations.locations[closest[i].key];
+            location.distance = closest[i].distance;
+            final_locations.push(location);
+          }
+          res.locations = final_locations;
+          next();
+        }
       } else{
-        send('noResults', req.toPhone, {zip: req.zip});
+         send('noResults', req.toPhone, {zip: req.zip});
       }
     });
   },
   send_locations: function(req, res, next){
     if(res.locations){
-      res.locations.reduce(function(previousValue, currentValue, index, array){
-        if(index < 4){
-          send('location', req.toPhone, {location: currentValue});
-        }
+      res.locations.forEach(function(location){
+          send('location', req.toPhone, {location: location});
       });
     }
     res.end();
@@ -66,7 +80,7 @@ function send(type, toPhone, data){
       break;
     case "location":
       var location = data.location;
-      body = location.title + ': ' + location.streetAddress + ', ' + location.locality + ', ' + location.region + ' ' + location.postalCode;
+      body = location.name + ': ' + location.address.street + ', ' + location.address.city + ', ' + location.address.state + ' ' + location.address.zip;
     break;
   }
   twilio.sendMessage({

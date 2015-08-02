@@ -1,0 +1,207 @@
+{
+  "locations": [
+    {
+      "key": 1,
+      "name" : "Richmond City Health District -- STI Clinic",
+      "address":{
+        "street": "401 East Main Street",
+        "city" : "Richmond",
+        "state": "VA",
+        "zip": 23219
+      },
+      "phone": "804-482-5500",
+      "hours": "Mon, Wed, and Fri, 7:30am to 10:30am and 12:30 to 3:30pm (NOTE: clinic has limited hours on some Fridays, so please call to verify times.)",
+      "coordinates":{
+        "latitude":37.541021,
+        "longitude": -77.440820
+      }
+    },
+    {
+      "key": 2,
+      "name" : "Minority Health Consortium Incorporated",
+      "address": {
+        "street": "208 East Clay Street",
+        "aux": "Suite B",
+        "city": "Richmond",
+        "state": "VA",
+        "zip": 23219
+      },
+      "phone": "804-225-0820",
+      "hours": "Mon-Fri, 10am to 5pm; Wed, 6pm to midnight",
+      "coordinates": {
+        "latitude": 37.546438,
+        "longitude": -77.43780
+      }
+    },
+    {
+      "key": 3,
+      "name" : "Gilpin Community Center",
+      "address": {
+        "street": "436 Calhoun Street",
+        "aux": "",
+        "city": "Richmond",
+        "state": "VA",
+        "zip": 23220
+      },
+      "phone": "804-786-1960",
+      "hours": "Tues, 9am to 5pm",
+      "coordinates": {
+        "latitude": 37.554324,
+        "longitude": -77.440631
+      }
+    },
+    {
+      "key": 4,
+      "name" : "Virginia League for Planned Parenthood",
+      "address": {
+        "street": "201 North Hamilton Street",
+        "aux": "",
+        "city": "Richmond",
+        "state": "VA",
+        "zip": 23221
+      },
+      "phone": "804-355-4358",
+      "hours": "Mon, Tues, Wed, 8am to 8pm; Thurs, 8am to 7pm; Fri, 8am to 6pm; Sat, 8am to 4pm; Sun 1pm to 6pm",
+      "coordinates": {
+        "latitude": 37.559761,
+        "longitude": -77.490406
+      }
+    },
+    {
+      "key": 5,
+      "name" : "Virginia Department of Health--Henrico Department of Health East",
+      "address": {
+        "street": "1400 North Laburnum Avenue",
+        "aux": "",
+        "city": "Richmond",
+        "state": "VA",
+        "zip": 23223
+      },
+      "phone": "804-652-3190",
+      "hours": "Mon, 8:30 to 10 am; Wed, 12:30 to 2:30 pm (CALL TO MAKE AN APPOINTMENT)",
+      "coordinates": {
+        "latitude": 37.566520,
+        "longitude": -77.380088
+      }
+    },
+    {
+      "key": 6,
+      "name" : "Creighton Community Center",
+      "address": {
+        "street": "2150 Creighton Rd.",
+        "aux": "",
+        "city": "Richmond",
+        "state": "VA",
+        "zip": 23223
+      },
+      "phone": "804-371-0433",
+      "hours": "Mon, 9am to 5pm",
+      "coordinates": {
+        "latitude": 37.547119,
+        "longitude": -77.397985
+      }
+    },
+    {
+      "key": 7,
+      "name" : "Whitcomb Community Center",
+      "address": {
+        "street": "2106 Deforrest Street",
+        "aux": "",
+        "city": "Richmond",
+        "state": "VA",
+        "zip": 23223
+      },
+      "phone": "804-786-0555",
+      "hours": "Tues, 9am to 5pm",
+      "coordinates": {
+        "latitude": 37.557286,
+        "longitude": -77.415266
+      }
+    },
+    {
+      "key": 8,
+      "name" : "Mosby Community Center",
+      "address": {
+        "street": "1536 Coalter Street",
+        "aux": "",
+        "city": "Richmond",
+        "state": "VA",
+        "zip": 23223
+      },
+      "phone" : "804-786-0204",
+      "hours": "Tues, 1pm to 5pm; Wed, 9am to 5pm",
+      "coordinates": {
+        "latitude": 37.549231,
+        "longitude": -77.417202
+      }
+    },
+    {
+      "key": 9,
+      "name" : "Fairfield Community Center",
+      "address": {
+        "street": "2311 N. 25th Street",
+        "aux": "",
+        "city": "Richmond",
+        "state": "VA",
+        "zip": 23223
+      },
+      "phone": "804-786-4099",
+      "hours": "Thurs, 9am to 5pm",
+      "coordinates": {
+        "latitude": 37.550872,
+        "longitude": -77.406074
+      }
+    },
+    {
+      "key": 10,
+      "name" : "Hillside Community Center",
+      "address": {
+        "street": "1615 Glenfield Avenue",
+        "aux": "",
+        "city": "Richmond",
+        "state": "VA",
+        "zip": 23224
+      },
+      "phone": "804-230-7740",
+      "hours": "Thurs, 9am to 5pm",
+      "coordinates": {
+        "latitude": 37.506288,
+        "longitude": -77.432627
+      }
+    },
+    {
+      "key": 11,
+      "name" : "Bellemeade Community Center",
+      "address": {
+        "street": "1800 Lynhaven Avenue",
+        "aux": "",
+        "city": "Richmond",
+        "state": "VA",
+        "zip": 23224
+      },
+      "phone": "804-646-1476",
+      "hours": "Mon, 1pm to 5pm",
+      "coordinates": {
+        "latitude": 37.496332,
+        "longitude": -77.441004
+      }
+    },
+    {
+      "key": 12,
+      "name" : "Broad Rock Community Center",
+      "address": {
+        "street": "4615 Ferguson Lane",
+        "aux": "",
+        "city": "Richmond",
+        "state": "VA",
+        "zip": 23234
+      },
+      "phone": "804-646-1477",
+      "hours": "Wed, 1pm to 5pm",
+      "coordinates": {
+        "latitude": 37.477922,
+        "longitude": -77.479711
+      }
+    }
+  ]
+}
