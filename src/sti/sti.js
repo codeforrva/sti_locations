@@ -1,5 +1,5 @@
-var ACCOUNT_SID = 'AC1ff73548781148219cfe7f016dbbb2a5';
-var AUTH_TOKEN  = 'f41b64484a596a89e7aa0fbf1f479861';
+var ACCOUNT_SID = process.env.TW_ACCOUNT_SID;
+var AUTH_TOKEN  = process.env.TW_AUTH_TOKEN;
 var twilio      = require('twilio')(ACCOUNT_SID, AUTH_TOKEN);
 var async       = require('async');
 var request     = require('request');
