@@ -14,7 +14,7 @@ module.exports = {
       toPhone = req.body.From;
     } else{
       zip = req.query.zip;
-      toPhone = "+17174870605";
+      toPhone = "+18045555555";
     }
     if(/^\d{5}(-\d{4})?$/.test(zip)){
       req.zip = zip;
@@ -80,7 +80,10 @@ function send(type, toPhone, data){
       break;
     case "location":
       var location = data.location;
-      body = location.name + ': ' + location.address.street + ', ' + location.address.city + ', ' + location.address.state + ' ' + location.address.zip;
+      body = location.name + ': \n' + location.address.street + ', ' + location.address.city + ', ' + location.address.state + ' ' + location.address.zip +  '\n';
+      body += 'distance: ' + location.distance + '\n';
+      body += 'hours: ' + location.hours + '\n';
+      body += 'phone: ' + location.phone;
     break;
   }
   twilio.sendMessage({
