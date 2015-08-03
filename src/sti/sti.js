@@ -81,7 +81,6 @@ function send(type, toPhone, data){
     case "location":
       var location = data.location;
       body = location.name + ': \n' + location.address.street + ', ' + location.address.city + ', ' + location.address.state + ' ' + location.address.zip +  '\n';
-      body += 'distance: ' + location.distance + '\n';
       body += 'hours: ' + location.hours + '\n';
       body += 'phone: ' + location.phone;
     break;
