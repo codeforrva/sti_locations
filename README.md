@@ -21,7 +21,7 @@ Start the express server:
 
 SMS service does not work locally since a network-reachable url is needed by Twilio.  However, you can simulate responses using a `GET` request with query string parameter `zip`. An example request:
 
-    http://localhost:300?zip=23220
+    http://localhost:3000?zip=23220
 
 
 ## Contributing
