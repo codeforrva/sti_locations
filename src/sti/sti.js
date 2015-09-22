@@ -1,3 +1,4 @@
+require('dotenv').load();
 var ACCOUNT_SID = process.env.TW_ACCOUNT_SID;
 var AUTH_TOKEN  = process.env.TW_AUTH_TOKEN;
 var twilio      = require('twilio')(ACCOUNT_SID, AUTH_TOKEN);
@@ -14,7 +15,7 @@ module.exports = {
       toPhone = req.body.From;
     } else{
       zip = req.query.zip;
-      toPhone = "+18045555555";
+      toPhone = process.env.TEST_PHONE;
     }
     if(/^\d{5}(-\d{4})?$/.test(zip)){
       req.zip = zip;

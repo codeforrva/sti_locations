@@ -1,11 +1,12 @@
 require('newrelic');
+require('dotenv').load();
 var ACCOUNT_SID = process.env.TW_ACCOUNT_SID;
 var AUTH_TOKEN  = process.env.TW_AUTH_TOKEN;
 var twilio = require('twilio')(ACCOUNT_SID, AUTH_TOKEN);
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var sti = require('sti');
+var sti = require('./src/sti');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
