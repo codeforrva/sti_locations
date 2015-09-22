@@ -13,7 +13,7 @@ Create a `.env` file in the root directory of the project and add the following:
     TW_AUTH_TOKEN=
     TEST_PHONE=
 
-where `TW_ACCOUNT_SID` and `TW_AUTH_TOKEN` are Twilio keys that you can get from [adam]('mailto:adam@codeforrva.org'), and `TEST_PHONE` is the phone number to where test text should be sent.  It is important to enter the phone number as such `+18045555555`, that is with a `+1` and then the phone number with area code with no hypen.
+where `TW_ACCOUNT_SID` and `TW_AUTH_TOKEN` are Twilio keys that you can get from [adam (adam@codeforrva.org)]('mailto:adam@codeforrva.org'), and `TEST_PHONE` is the phone number to where test text should be sent.  It is important to enter the phone number as such `+18045555555`, that is with a `+1` and then the phone number with area code with no hypen.
 
 Start the express server:
 
